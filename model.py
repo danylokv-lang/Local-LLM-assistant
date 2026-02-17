@@ -1,31 +1,33 @@
 from llama_cpp import Llama
-from config import SYSTEM_PROMPT
 
 class AIModel:
     def __init__(self):
         print("Loading model on GPU with llama.cpp...")
-        # path до твоєї quantized моделі
         self.model = Llama(
-            model_path="models/mistral-7b-openorca.Q4_K_M.gguf",
-            n_gpu_layers=40,  # скільки шарів запускати на GPU, налаштувати можна
+            model_path="models/meta-llama-3-8b-instruct-q4_0.gguf",
+            n_ctx=2048,
+            n_gpu_layers=40,
             verbose=False
         )
         print("Model loaded!")
 
-    def generate(self, prompt):
-        # повний prompt з системою + історією
-        full_prompt = SYSTEM_PROMPT + "\n" + prompt
+    def generate(self, user_input, history=None):
+        system_prompt = "You are a helpful and friendly assistant."
+
+        full_prompt = (
+            "<|begin_of_text|>"
+            "<|start_header_id|>system<|end_header_id|>\n\n"
+            f"{system_prompt}<|eot_id|>"
+            "<|start_header_id|>user<|end_header_id|>\n\n"
+            f"{user_input}<|eot_id|>"
+            "<|start_header_id|>assistant<|end_header_id|>\n\n"
+        )
 
         output = self.model(
             full_prompt,
-            max_tokens=150,
-            stop=["User:", "Assistant:"]
+            max_tokens=200,
+            stop=["<|eot_id|>"],
         )
+        text = output["choices"][0]["text"].strip()
+        return text
 
-        # обрізаємо зайве
-        text = output.get("text", "")
-        if "User:" in text:
-            text = text.split("User:")[0]
-        return text.strip()
-
-    
