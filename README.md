@@ -47,6 +47,13 @@ This project is ideal as a foundation for building your own **CLI assistant**, *
 
 ### Installation
 
+```model
+Meta-Llama-3-8B-Instruct-Q4_0-GGUF
+https://huggingface.co/aptha/Meta-Llama-3-8B-Instruct-Q4_0-GGUF/tree/main
+
+```
+
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
