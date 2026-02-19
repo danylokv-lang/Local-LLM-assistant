@@ -1,202 +1,163 @@
-#  Local Llama 3 Chatbot
+# Local LLM Assistant v3.0
 
-> **A lightweight, local-first AI assistant** powered by `llama.cpp` and **Meta Llama 3**, wrapped in a simple Python architecture with clear separation of concerns.
-
-This project is ideal as a foundation for building your own **CLI assistant**, **personal agent**, or for experimenting with **local LLMs**.
+A local AI assistant with modern GUI, Ollama/llama-cpp support, and smart NLP commands.
 
 ---
 
-##  Features
+## What's New in v3.0
 
-- **Local inference** with `llama.cpp` (no external API required)
-- **Clean modular design:**
-  - `AIModel` – low-level model wrapper
-  - `Brain` – conversation logic and history handling
-  - `Memory` – configurable conversation context window
-  - `commands` – extensible slash-commands (`/open`, `/exit`, etc.)
-  - `config` – centralized model and behavior settings
-- **Simple CLI interface** (`main.py`) with a chat-like experience
-- **Conversation history** to keep context across turns
-- **Easy to adapt** for other GGUF models or front-ends (GUI, web, Discord, etc.)
+### Added
 
----
+- Modern GUI with dark theme and large fonts
+- Chat history sidebar with ability to switch between conversations
+- Auto-save chats to `chat_history.json`
+- Auto-expanding input field (grows with each line)
+- DPI awareness for crisp text on any monitor
+- Dual backend support: Ollama (fast) or llama-cpp-python (standalone)
+- Natural language commands: "open steam", "search cats", "play game"
 
-##  Project Structure
+### Removed
 
-```
-.
-├── main.py          # Entry point, CLI chat loop
-├── brain.py         # High-level conversation brain, uses AIModel + history
-├── model.py         # Llama.cpp model wrapper (Meta Llama 3 GGUF)
-├── memory.py        # Conversation memory management
-├── commands.py      # Slash command handling (/open, /exit, ...)
-├── config.py        # Global configuration (model name, system prompt, history)
-└── models/
-    └── meta-llama-3-8b-instruct-q4_0.gguf  # Local model file (not included)
-```
+- Splash screen (slowed startup, not needed with Ollama)
+- CustomTkinter (replaced with pure tkinter for speed)
+- Unicode print statements (fixed Windows encoding issues)
+
+### Changed
+
+- CLI interface -> GUI with sidebar
+- Commands trigger only at start of message (prevents false matches)
+- Increased font sizes to 20-26pt
+- Instant startup with Ollama instead of 2-4 min model loading
 
 ---
 
-##  Requirements
+## Quick Start
 
-- **Python 3.10+** (recommended)
-- **GPU or CPU** capable of running the chosen GGUF model
-- **Python dependencies:**
-  - `llama-cpp-python`
-  - *(Optionally)* any extra deps for commands or integrations
-
-### Installation
+### 1. Install dependencies
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install llama-cpp-python
+venv\Scripts\activate  # Windows
+pip install ollama
 ```
 
-> **Note:** Make sure the GGUF model file is placed under `models/` and the path in `model.py` matches:
-
-```python
-self.model = Llama(
-    model_path="models/meta-llama-3-8b-instruct-q4_0.gguf",
-    n_ctx=2048,
-    n_gpu_layers=40,
-    verbose=False,
-)
-```
-
----
-
-##  Usage
-
-Run the chatbot from the project root:
+### 2. Install Ollama + model
 
 ```bash
-python main.py
+# Download Ollama from https://ollama.ai
+ollama pull llama3
+# or create your own model
+ollama create llama3-local -f Modelfile
 ```
 
-You will see:
+### 3. Run
 
+```bash
+python gui.py
 ```
-Loading model on GPU with llama.cpp...
-Model loaded!
-AI Assistant started. Type /exit to quit.
-You:
-```
-
-### Examples
-
-**Regular message** – sent to the AI:
-```
-You: Hi, how are you?
-AI: ...
-```
-
-**Exit the assistant:**
-```
-You: /exit
-```
-
-**Open a local program:**
-```
-You: /open notepad.exe
-```
-
-> Commands are handled in `commands.py`, and you can extend this with your own tooling.
 
 ---
 
-##  Core Components
+## Project Structure
 
-### **AIModel** (`model.py`)
-
-Encapsulates `llama.cpp` and defines how prompts are sent to the model:
-
-- Initializes the Llama model with a given GGUF file, context size, and GPU layers
-- Builds a prompt (optionally including history) and calls the model
-- Extracts and returns the generated text
-
-**You can:**
-- Switch to another GGUF model
-- Tune generation parameters (`max_tokens`, `temperature`, `stop` tokens)
-- Adjust the chat template for different model families
-
----
-
-### **Brain** (`brain.py`)
-
-High-level logic for a single conversation:
-
-- Holds a history of turns
-- Calls `AIModel.generate(...)` with the current user message and history
-- Stores each `{user, assistant}` pair for future context
-
-**You can:**
-- Implement system messages, roles, tools, or routing between multiple models
-- Add filters, safety, or additional reasoning logic
+```
+gui.py              - Main GUI (tkinter)
+brain.py            - Message processing logic
+model.py            - AI model (Ollama/llama-cpp)
+commands.py         - Command handler
+command_config.py   - Command settings
+config.py           - General settings
+memory.py           - Memory management
+chat_history.json   - Saved chats
+Modelfile           - Ollama config
+models/             - Folder for .gguf models
+```
 
 ---
 
-### **Memory** (`memory.py`)
+## Backend Configuration
 
-Simple sliding-window memory:
+Edit `model.py`:
 
-- Stores recent messages as `{"role": ..., "content": ...}`
-- Keeps only the last `MAX_HISTORY` items (configured in `config.py`)
-- Provides a `get_context()` method to build a context string
+```python
+# Ollama (recommended) - fast, model stays in memory
+USE_OLLAMA = True
+OLLAMA_MODEL = "llama3-local"
 
-**You can replace or upgrade this with:**
-- Persistent storage (database, files)
-- Retrieval-augmented generation (RAG) pipelines
-- Per-user or per-session memory
-
----
-
-### **Commands** (`commands.py`)
-
-Basic slash command support:
-
-| Command | Description |
-|---------|-------------|
-| `/open <program>` | Launches a local program via subprocess |
-| `/exit` | Terminates the assistant |
-
-**Extend with:**
-- Custom tools (open URLs, manage files, control media)
-- Integration with external APIs or local services
+# or llama-cpp-python - standalone, but slower startup
+USE_OLLAMA = False
+MODEL_FILE = "Meta-Llama-3-8B-Instruct.Q4_K_M.gguf"
+```
 
 ---
 
-### **Config** (`config.py`)
+## NLP Commands
 
-Central configuration:
+| Command | Example |
+|---------|---------|
+| Search | "search recipe" |
+| Open app | "open steam" |
+| Launch game | "play cs" |
+| Open website | "open youtube" |
+| Exit | "bye", "quit" |
 
-| Setting | Description |
-|---------|-------------|
-| `MODEL_NAME` | Reference model name |
-| `MAX_HISTORY` | How many messages to retain in memory |
-| `SYSTEM_PROMPT` | Default system instruction for the assistant |
-
-**Use this to manage:**
-- Different profiles or modes ("code assistant", "teacher", "storyteller")
-- Environment-specific settings
+Commands are configured in `command_config.py`.
 
 ---
 
-##  Customization Ideas
+## Keyboard Shortcuts
 
-| Idea | Description |
-|------|-------------|
-| **Swap the model** | Use a different Llama 3 variant or another GGUF instruct model |
-| **Change the chat style** | Adjust the prompt and stop tokens to match your preferred template |
-| **Add front-ends** | Wrap Brain in a web server (FastAPI/Flask), Discord bot, or desktop UI |
-| **Extend commands** | Add `/search`, `/note`, `/todo`, or integrate with your own tools |
+| Key | Action |
+|-----|--------|
+| Enter | Send message |
+| Shift+Enter | New line |
+| /help | Show commands |
 
 ---
 
-##  Disclaimer
+## Backend Comparison
 
-> **This project runs a local LLM** – quality and performance depend on your hardware and the chosen model.
->
-> **Be careful** with `/open` and any other system commands – they execute programs on your machine.
+| Parameter | Ollama | llama-cpp-python |
+|-----------|--------|------------------|
+| Startup speed | ~2 sec | ~2-4 min |
+| RAM | Model in memory | Loads each time |
+| Setup | Easier | More control |
+| Dependencies | ollama serve | Python only |
+
+Recommendation: Use Ollama for daily use.
+
+---
+
+## Troubleshooting
+
+### "AI not initialized"
+```bash
+# Check if Ollama is running
+ollama list
+# If not, start it
+ollama serve
+```
+
+### Slow startup
+- Switch to Ollama (`USE_OLLAMA = True`)
+
+### Small text
+- Font sizes are configured in `gui.py` -> `_setup_fonts()`
+
+---
+
+## Version History
+
+| Version | Changes |
+|---------|---------|
+| v3.0 | GUI, chat history, NLP commands, Ollama |
+| v2.0 | Brain architecture, commands |
+| v1.0 | CLI chatbot with llama-cpp |
+
+---
+
+## License
+
+MIT License
 
 

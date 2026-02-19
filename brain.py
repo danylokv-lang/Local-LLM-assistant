@@ -11,11 +11,10 @@ class Brain:
     """
     
     def __init__(self):
-        print("Ініціалізація асистента...")
+        # Use ASCII-safe messages for Windows console compatibility
         self.command_handler = CommandHandler()
         self.model = AIModel()
         self.history = []
-        print("Асистент готовий!")
 
     def process(self, user_input: str) -> str:
         """

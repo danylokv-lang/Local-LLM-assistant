@@ -1,22 +1,30 @@
 """
 AI Model - підтримка Ollama та llama-cpp-python
 
-Використовує Ollama за замовчуванням (простіше налаштувати).
-Для локальної моделі через llama-cpp - розкоментуй відповідний код.
+Вибери бекенд нижче: USE_OLLAMA = True/False
 """
 
 import os
 
-# Спробувати імпортувати ollama, якщо не вдалося - llama-cpp
-try:
-    import ollama
-    USE_OLLAMA = True
-except ImportError:
-    USE_OLLAMA = False
+# ========== ВИБІР БЕКЕНДУ ==========
+# True = Ollama (потребує ollama serve)
+# False = llama-cpp-python (працює напряму з .gguf файлом)
+USE_OLLAMA = True  # Ollama - швидко!
+
+# Шлях до твоєї моделі
+MODEL_FILE = "Meta-Llama-3-8B-Instruct.Q4_K_M.gguf"
+
+
+if USE_OLLAMA:
+    try:
+        import ollama
+    except ImportError:
+        raise ImportError("Встанови ollama: pip install ollama")
+else:
     try:
         from llama_cpp import Llama
     except ImportError:
-        raise ImportError("Встанови ollama (pip install ollama) або llama-cpp-python")
+        raise ImportError("Встанови llama-cpp-python: pip install llama-cpp-python")
 
 
 class AIModel:
@@ -45,42 +53,33 @@ based on the user's language."""
             self._init_llama_cpp()
     
     def _init_ollama(self):
-        """Ініціалізація Ollama"""
-        print(f"Підключаюсь до Ollama ({self.OLLAMA_MODEL})...")
+        """Initialize Ollama"""
         self.backend = "ollama"
         
-        # Перевірити чи модель доступна
+        # Check if model is available
         try:
-            # Тестовий запит
             ollama.chat(model=self.OLLAMA_MODEL, messages=[
                 {"role": "user", "content": "test"}
             ])
-            print("Ollama готовий!")
         except Exception as e:
-            print(f"⚠️ Помилка Ollama: {e}")
-            print("Переконайся що:")
-            print("1. Ollama запущений (ollama serve)")
-            print(f"2. Модель завантажена (ollama pull {self.OLLAMA_MODEL})")
-            raise
+            raise RuntimeError(f"Ollama error: {e}. Make sure ollama serve is running.")
     
     def _init_llama_cpp(self):
-        """Ініціалізація llama-cpp-python"""
-        print("Завантажую локальну модель...")
+        """Initialize llama-cpp-python with Meta-Llama-3"""
         self.backend = "llama_cpp"
         
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(base_dir, "models", "mistral-7b-openorca.Q4_K_M.gguf")
+        model_path = os.path.join(base_dir, "models", MODEL_FILE)
         
         if not os.path.exists(model_path):
-            raise FileNotFoundError(f"Модель не знайдена: {model_path}")
+            raise FileNotFoundError(f"Model not found: {model_path}")
         
         self.model = Llama(
             model_path=model_path,
-            n_ctx=2048,
-            n_gpu_layers=0,
+            n_ctx=4096,  # Llama 3 supports 8K context
+            n_gpu_layers=0,  # 0 = CPU only
             verbose=False
         )
-        print("Модель завантажена!")
     
     def generate(self, user_input: str, history: list = None) -> str:
         """
@@ -119,17 +118,21 @@ based on the user's language."""
             return f"Помилка генерації: {e}"
     
     def _generate_llama_cpp(self, user_input: str, history: list = None) -> str:
-        """Генерація через llama-cpp-python"""
+        """Генерація через llama-cpp-python (Llama 3 формат)"""
+        # Llama 3 Instruct формат
         full_prompt = (
-            f"<|im_start|>system\n{self.SYSTEM_PROMPT}<|im_end|>\n"
-            f"<|im_start|>user\n{user_input}<|im_end|>\n"
-            f"<|im_start|>assistant\n"
+            f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n"
+            f"{self.SYSTEM_PROMPT}<|eot_id|>"
+            f"<|start_header_id|>user<|end_header_id|>\n\n"
+            f"{user_input}<|eot_id|>"
+            f"<|start_header_id|>assistant<|end_header_id|>\n\n"
         )
         
         output = self.model(
             full_prompt,
-            max_tokens=200,
-            stop=["<|im_end|>"],
+            max_tokens=512,
+            stop=["<|eot_id|>", "<|end_of_text|>"],
+            temperature=0.7,
         )
         return output["choices"][0]["text"].strip()
 

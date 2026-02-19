@@ -122,20 +122,18 @@ class CommandHandler:
     def _try_dynamic_commands(self, normalized: str, original: str) -> dict:
         """Спробувати розпізнати динамічні команди з параметрами"""
         
-        # Пошук
+        # Пошук - тільки якщо починається з тригера
         for trigger in SEARCH_TRIGGERS:
-            if trigger in normalized:
+            if normalized.startswith(trigger + " ") or normalized.startswith(trigger + ":"):
                 # Витягти запит після тригера
-                idx = normalized.find(trigger)
-                query = original[idx + len(trigger):].strip()
+                query = original[len(trigger):].strip().lstrip(": ")
                 if query:
                     return self._search(query)
         
-        # Запуск гри
+        # Запуск гри - тільки якщо починається з тригера
         for trigger in PLAY_GAME_TRIGGERS:
-            if trigger in normalized:
-                idx = normalized.find(trigger)
-                game_name = original[idx + len(trigger):].strip()
+            if normalized.startswith(trigger + " ") or normalized.startswith(trigger + ":"):
+                game_name = original[len(trigger):].strip().lstrip(": ")
                 if game_name:
                     return self._launch_steam_game(game_name)
         
@@ -157,8 +155,11 @@ class CommandHandler:
         """Виконати команду за типом"""
         
         if cmd_type == "exit":
-            print(get_message("goodbye"))
-            exit()
+            return {
+                "executed": True,
+                "response": get_message("goodbye"),
+                "type": "exit"
+            }
         
         if cmd_type == "open_app":
             return self._open_app(param)

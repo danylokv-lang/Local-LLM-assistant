@@ -1,0 +1,220 @@
+{
+  "20260219_101133": {
+    "id": "20260219_101133",
+    "title": "Допоможи мені з цим завданням ...",
+    "created": "2026-02-19T10:11:33.097428",
+    "messages": [
+      {
+        "text": "Допоможи мені з цим завданням \n\t2. Entzippe das File games-rpsls.zip in einen Ordner deiner Wahl und importiere den Inhalt in Eclipse als maven Projekt. ( 319-03B - 04.00 Unterrichtsmittel: games-rpsls.zip )\n\n\t1. Führe die main Methode der Klasse games.rps.RPSApp aus und spiele das Spiel 'Rock, Paper, Scissors' (Schere, Stein ,Papier) einige Male, um das Verhalten des Programmes zu studieren.\n\n\t3. Generiere die Javadoc html Dokumentation und studiere die Beschreibung aller Klassen der Packages games.simple und games.rps.\n \n\t4. Studiere anschliessend den Code der Methoden games.simple.SimpleGame.initMoves, games.simple.SimpleGame.initScoreMatrix, games.rps.RPSGame.initMoves und games.rps.RPSGame.initScoreMatrix.\n\n\t5. Implementiere die beiden Methoden games.rpsls.RPSLSGame.initMoves und games.rpsls.RPSLGame.initScoreMatrix für das Spiel Rock, Paper, Scissors, Lizzard, Spock nach demselben Prinzip wie in Rock, Paper, Scissors.\n\n\t6. Führe die main -Methode der Klasse games.rpsls.RPSLSApp aus und teste deine Implementierung.\n\n\t7. Erfinde nach demselben Prinzip dein eigenes Spiel und implementiere es im Paket games.namedeinesspiels.\n\n\tBemerkung:\nLese die Java-Dokumentation der Methode games.SimpleGame.initScoreMatrix um den Aufbau des zweidimensionalen Arrays zu verstehen.",
+        "is_user": true,
+        "timestamp": "2026-02-19T10:12:13.087379"
+      },
+      {
+        "text": "Шукаю: e nach demselben Prinzip dein eigenes Spiel und implementiere es im Paket games.namedeinesspiels.\n\n\tBemerkung:\nLese die Java-Dokumentation der Methode games.SimpleGame.initScoreMatrix um den Aufbau des zweidimensionalen Arrays zu verstehen....",
+        "is_user": false,
+        "timestamp": "2026-02-19T10:12:13.536175"
+      },
+      {
+        "text": "Можеш мені розказати що мені треба тут зробити та дати відповідь\n\n\n\t2. Entzippe das File games-rpsls.zip in einen Ordner deiner Wahl und importiere den Inhalt in Eclipse als maven Projekt. ( 319-03B - 04.00 Unterrichtsmittel: games-rpsls.zip )\n\n\t1. Führe die main Methode der Klasse games.rps.RPSApp aus und spiele das Spiel 'Rock, Paper, Scissors' (Schere, Stein ,Papier) einige Male, um das Verhalten des Programmes zu studieren.\n\n\t3. Generiere die Javadoc html Dokumentation und studiere die Beschreibung aller Klassen der Packages games.simple und games.rps.\n \n\t4. Studiere anschliessend den Code der Methoden games.simple.SimpleGame.initMoves, games.simple.SimpleGame.initScoreMatrix, games.rps.RPSGame.initMoves und games.rps.RPSGame.initScoreMatrix.\n\n\t5. Implementiere die beiden Methoden games.rpsls.RPSLSGame.initMoves und games.rpsls.RPSLGame.initScoreMatrix für das Spiel Rock, Paper, Scissors, Lizzard, Spock nach demselben Prinzip wie in Rock, Paper, Scissors.\n\n\t6. Führe die main -Methode der Klasse games.rpsls.RPSLSApp aus und teste deine Implementierung.\n\n\t7. Erfinde nach demselben Prinzip dein eigenes Spiel und implementiere es im Paket games.namedeinesspiels.\n\n\tBemerkung:\nLese die Java-Dokumentation der Methode games.SimpleGame.initScoreMatrix um den Aufbau des zweidimensionalen Arrays zu verstehen.",
+        "is_user": true,
+        "timestamp": "2026-02-19T10:12:54.806647"
+      },
+      {
+        "text": "Шукаю: e nach demselben Prinzip dein eigenes Spiel und implementiere es im Paket games.namedeinesspiels.\n\n\tBemerkung:\nLese die Java-Dokumentation der Methode games.SimpleGame.initScoreMatrix um den Aufbau des zweidimensionalen Arrays zu verstehen....",
+        "is_user": false,
+        "timestamp": "2026-02-19T10:12:54.892414"
+      },
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T12:47:44.031221"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T12:47:44.093712"
+      },
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T12:50:56.707507"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T12:50:56.807778"
+      }
+    ]
+  },
+  "20260219_130011": {
+    "id": "20260219_130011",
+    "title": "Hi",
+    "created": "2026-02-19T13:00:11.195030",
+    "messages": [
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:00:15.090063"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:00:15.136933"
+      },
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:02:12.578116"
+      },
+      {
+        "text": "Здравствуйте! (Hello!) or Hi! How can I help you today?",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:02:20.608500"
+      },
+      {
+        "text": "Зможеш мені пояснити що тут треба робити?\n\t2. Entzippe das File games-rpsls.zip in einen Ordner deiner Wahl und importiere den Inhalt in Eclipse als maven Projekt. ( 319-03B - 04.00 Unterrichtsmittel: games-rpsls.zip )\n\n\t1. Führe die main Methode der Klasse games.rps.RPSApp aus und spiele das Spiel 'Rock, Paper, Scissors' (Schere, Stein ,Papier) einige Male, um das Verhalten des Programmes zu studieren.\n\n\t3. Generiere die Javadoc html Dokumentation und studiere die Beschreibung aller Klassen der Packages games.simple und games.rps.\n \n\t4. Studiere anschliessend den Code der Methoden games.simple.SimpleGame.initMoves, games.simple.SimpleGame.initScoreMatrix, games.rps.RPSGame.initMoves und games.rps.RPSGame.initScoreMatrix.\n\n\t5. Implementiere die beiden Methoden games.rpsls.RPSLSGame.initMoves und games.rpsls.RPSLGame.initScoreMatrix für das Spiel Rock, Paper, Scissors, Lizzard, Spock nach demselben Prinzip wie in Rock, Paper, Scissors.\n\n\t6. Führe die main -Methode der Klasse games.rpsls.RPSLSApp aus und teste deine Implementierung.\n\n\t7. Erfinde nach demselben Prinzip dein eigenes Spiel und implementiere es im Paket games.namedeinesspiels.\n\n\tBemerkung:\nLese die Java-Dokumentation der Methode games.SimpleGame.initScoreMatrix um den Aufbau des zweidimensionalen Arrays zu verstehen.",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:03:12.125409"
+      },
+      {
+        "text": "Шукаю: e nach demselben Prinzip dein eigenes Spiel und implementiere es im Paket games.namedeinesspiels.\n\n\tBemerkung:\nLese die Java-Dokumentation der Methode games.SimpleGame.initScoreMatrix um den Aufbau des zweidimensionalen Arrays zu verstehen....",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:03:12.441744"
+      },
+      {
+        "text": "Зможеш мені пояснити що тут треба робити? . Entzippe das File games-rpsls.zip in einen Ordner deiner Wahl und importiere den Inhalt in Eclipse als maven Projekt. ( 319-03B - 04.00 Unterrichtsmittel: games-rpsls.zip )\\n\\n\\t1. Führe die main Methode der Klasse games.rps.RPSApp aus und spiele das Spiel 'Rock, Paper, Scissors' (Schere, Stein ,Papier) einige Male, um das Verhalten des Programmes zu studieren.\\n\\n\\t3. Generiere die Javadoc html Dokumentation und studiere die Beschreibung aller Klassen der Packages games.simple und games.rps.\\n \\n\\t4. Studiere anschliessend den Code der Methoden games.simple.SimpleGame.initMoves, games.simple.SimpleGame.initScoreMatrix, games.rps.RPSGame.initMoves und games.rps.RPSGame.initScoreMatrix.\\n\\n\\t5. Implementiere die beiden Methoden games.rpsls.RPSLSGame.initMoves und games.rpsls.RPSLGame.initScoreMatrix für das Spiel Rock, Paper, Scissors, Lizzard, Spock nach demselben Prinzip wie in Rock, Paper, Scissors.\\n\\n\\t6. Führe die main -Methode der Klasse games.rpsls.RPSLSApp aus und teste deine Implementierung.\\n\\n\\t7. Erfinde nach demselben Prinzip dein eigenes Spiel und implementiere es im Paket games.namedeinesspiels.\\n\\n\\tBemerkung:\\nLese die Java-Dokumentation der Methode games.SimpleGame.initScoreMatrix um den Aufbau des zweidimensionalen Arrays zu verstehen.\",",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:05:59.699697"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:05:59.781619"
+      }
+    ]
+  },
+  "20260219_130604": {
+    "id": "20260219_130604",
+    "title": "Hi",
+    "created": "2026-02-19T13:06:04.469375",
+    "messages": [
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:06:07.634182"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:06:07.673448"
+      },
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:12:26.643274"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:12:26.737008"
+      }
+    ]
+  },
+  "20260219_131229": {
+    "id": "20260219_131229",
+    "title": "Hi",
+    "created": "2026-02-19T13:12:29.196527",
+    "messages": [
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:12:30.901133"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:12:31.004742"
+      },
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:23:59.497817"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:23:59.663307"
+      }
+    ]
+  },
+  "20260219_132404": {
+    "id": "20260219_132404",
+    "title": "Hi",
+    "created": "2026-02-19T13:24:04.745275",
+    "messages": [
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:24:06.744248"
+      },
+      {
+        "text": "AI не ініціалізований. Перезапустіть програму.",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:24:06.962101"
+      },
+      {
+        "text": "Hi",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:25:19.319869"
+      },
+      {
+        "text": "Hello! Welcome! It's great to have you here. I'm your friendly AI assistant, ready to help with any questions or tasks you might have. Is there something specific you'd like to talk about or work on today?",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:25:32.051733"
+      }
+    ]
+  },
+  "20260219_132540": {
+    "id": "20260219_132540",
+    "title": "/help",
+    "created": "2026-02-19T13:25:40.698339",
+    "messages": [
+      {
+        "text": "/help",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:25:43.999908"
+      },
+      {
+        "text": "\n📋 ДОСТУПНІ КОМАНДИ:\n\nПрямі команди (починаються з /):\n  /open <програма>  - відкрити програму\n  /steam <гра>      - запустити Steam гру\n  /search <запит>   - пошук в Google\n  /site <сайт>      - відкрити сайт\n  /exit             - вийти\n  /help             - ця допомога\n\nПриродна мова (приклади):\n  \"відкрий стім\"       - відкриє Steam\n  \"запусти дискорд\"    - відкриє Discord\n  \"знайди котиків\"     - пошук в Google\n  \"пограй в dota\"      - запустить Dota 2\n  \"відкрий ютуб\"       - відкриє YouTube\n\n💡 Налаштування в файлі: command_config.py\n",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:25:44.281158"
+      },
+      {
+        "text": "Поясни мені будь ласка що мені тут треба зробити і виріши це завдання.\n2. Entzippe das File games-rpsls.zip in einen Ordner deiner Wahl und importiere den Inhalt in Eclipse als maven Projekt. ( 319-03B - 04.00 Unterrichtsmittel: games-rpsls.zip )\\n\\n\\t1. Führe die main Methode der Klasse games.rps.RPSApp aus und spiele das Spiel 'Rock, Paper, Scissors' (Schere, Stein ,Papier) einige Male, um das Verhalten des Programmes zu studieren.\\n\\n\\t3. Generiere die Javadoc html Dokumentation und studiere die Beschreibung aller Klassen der Packages games.simple und games.rps.\\n \\n\\t4. Studiere anschliessend den Code der Methoden games.simple.SimpleGame.initMoves, games.simple.SimpleGame.initScoreMatrix, games.rps.RPSGame.initMoves und games.rps.RPSGame.initScoreMatrix.\\n\\n\\t5. Implementiere die beiden Methoden games.rpsls.RPSLSGame.initMoves und games.rpsls.RPSLGame.initScoreMatrix für das Spiel Rock, Paper, Scissors, Lizzard, Spock nach demselben Prinzip wie in Rock, Paper, Scissors.\\n\\n\\t6. Führe die main -Methode der Klasse games.rpsls.RPSLSApp aus und teste deine Implementierung.\\n\\n\\t7. Erfinde nach demselben Prinzip dein eigenes Spiel und implementiere es im Paket games.namedeinesspiels.\\n\\n\\tBemerkung:\\nLese die Java-Dokumentation der Methode games.SimpleGame.initScoreMatrix um den Aufbau des zweidimensionalen Arrays zu verstehen.\",",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:27:25.324614"
+      },
+      {
+        "text": "Let's break down the task together.\n\n**Task:** You need to complete the following steps:\n\n1. Unzip the `games-rpsls.zip` file into a folder of your choice and import its content into Eclipse as a Maven project.\n2. Run the `main` method of the `games.rps.RPSApp` class in Eclipse to play the \"Rock, Paper, Scissors\" game a few times to study the program's behavior.\n3. Generate the Javadoc HTML documentation for the packages `games.simple` and `games.rps`, and study the descriptions of all classes.\n4. Study the code of the methods:\n\t* `games.simple.SimpleGame.initMoves`\n\t* `games.simple.SimpleGame.initScoreMatrix`\n\t* `games.rps.RPSGame.initMoves`\n\t* `games.rps.RPSGame.initScoreMatrix`\n5. Implement the methods:\n\t* `games.rpsls.RPSLSGame.initMoves` for the \"Rock, Paper, Scissors, Lizard, Spock\" game\n\t* `games.rpsls.RPSLGame.initScoreMatrix` for the same game\n6. Run the `main` method of the `games.rpsls.RPSLSApp` class to test your implementation.\n7. Invent a new game based on the same principle and implement it in the `games.namedeinesspiels` package.\n\n**Note:** Read the Java documentation of the `games.SimpleGame.initScoreMatrix` method to understand how the two-dimensional array is built.\n\nAre you ready to start?",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:28:48.734619"
+      },
+      {
+        "text": "Уяви що ти трененр в спортзалі і склади для мене план на 30хв які вправи робити для качання пресу біцепсу та і в цілому ще груді \nМені 15 важу рівно 56кг і мій зріст 182 і в мене є 30 хв на день і 2 дні на тиждень \nМожу піднімати гантелі по 12кг по 20 раз за підхід на обидві руки \nі можу рообити жим лежа максимум 45кг на 1 раз і на 30кг по 15разів десь",
+        "is_user": true,
+        "timestamp": "2026-02-19T13:35:47.511874"
+      },
+      {
+        "text": "Based on your current strength and goals, I've created a workout plan for you to focus on improving your bench press and overall upper body development. Since you have 30 minutes, 2 times a week, we'll aim to make the most out of that time.\n\n**Warm-up (5 minutes)**\n\n1. Light cardio: Jumping jacks or jogging in place\n2. Dynamic stretching: Arm circles, shoulder rolls, and chest opens\n\n**Bench Press Workout (15 reps x 3 sets = 45 reps total)**\n\n* Start with a weight you can comfortably lift for 15 reps, which is around 30kg based on your previous max of 45kg.\n* Perform the bench press exercise lying down on a flat surface.\n* Rest for 60-90 seconds between sets.\n\n**Dumbbell Workout (12kg x 20 reps x 2 sets = 240 reps total)**\n\n* Grab two dumbbells, each weighing 12kg.\n* Hold one dumbbell in each hand with your palms facing forward.\n* Perform the following exercises:\n\t1. Dumbbell press: Lift the dumbbells to shoulder height, then lower them back down (20 reps)\n\t2. Lateral raises: Hold the dumbbells at your sides and lift them out to the sides until they're at shoulder level (20 reps)\n\n**Cool-down (5 minutes)**\n\n1. Static stretching: Focus on your chest, shoulders, and triceps\n2. Foam rolling or self-myofascial release: Use a foam roller or your own body weight to release tension in your upper body muscles\n\n**Additional Tips**\n\n* Increase the weight as you get stronger.\n* Focus on proper form and control during each exercise.\n* Rest for 60-90 seconds between sets, but adjust this time based on how you feel.\n* Mix up your routine every 4-6 weeks to avoid plateaus.\n\nRemember, consistency is key. Stick to this workout plan and you'll see improvements in your bench press and overall upper body strength!",
+        "is_user": false,
+        "timestamp": "2026-02-19T13:38:12.487976"
+      }
+    ]
+  },
+  "20260219_133157": {
+    "id": "20260219_133157",
+    "title": "Новий чат",
+    "created": "2026-02-19T13:31:57.307493",
+    "messages": []
+  }
+}
